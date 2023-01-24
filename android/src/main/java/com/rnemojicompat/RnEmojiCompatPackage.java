@@ -16,10 +16,9 @@ import android.app.Application;
 import androidx.emoji2.text.EmojiCompat;
 import androidx.emoji2.bundled.BundledEmojiCompatConfig;
 
-
 public class RnEmojiCompatPackage implements ReactPackage {
 
-  public void init(Application application) {
+  public static void initializeEmojiCompat(Application application) {
         EmojiCompat.Config config = new BundledEmojiCompatConfig(application);
         EmojiCompat.init(config);
   }
