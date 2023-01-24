@@ -15,8 +15,11 @@ import androidx.emoji2.text.EmojiCompat;
 public class RnEmojiCompatModule extends ReactContextBaseJavaModule {
   public static final String NAME = "RnEmojiCompat";
 
-  public RnEmojiCompatModule(ReactApplicationContext reactContext) {
-    super(reactContext);
+  private final ReactApplicationContext context;
+
+  public RnEmojiCompatModule(ReactApplicationContext context) {
+      super(context);
+      this.context = context;
   }
 
   @Override
@@ -25,9 +28,6 @@ public class RnEmojiCompatModule extends ReactContextBaseJavaModule {
     return NAME;
   }
 
-
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
   public void getCompatibleEmojiString(String input, Callback onSuccess, Callback onError) {
         try {
