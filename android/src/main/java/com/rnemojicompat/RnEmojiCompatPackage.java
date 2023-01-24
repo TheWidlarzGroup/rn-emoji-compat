@@ -11,15 +11,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import android.app.Application;
+import android.content.Context;
 
 import androidx.emoji2.text.EmojiCompat;
 import androidx.emoji2.bundled.BundledEmojiCompatConfig;
 
 public class RnEmojiCompatPackage implements ReactPackage {
 
-  public static void initializeEmojiCompat(Application application) {
-        EmojiCompat.Config config = new BundledEmojiCompatConfig(application);
+  public static void initializeEmojiCompat(Context context) {
+        EmojiCompat.Config config = new BundledEmojiCompatConfig(context);
         EmojiCompat.init(config);
   }
 
