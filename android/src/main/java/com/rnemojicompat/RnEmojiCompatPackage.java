@@ -19,11 +19,10 @@ import androidx.emoji2.bundled.BundledEmojiCompatConfig;
 
 public class RnEmojiCompatPackage implements ReactPackage {
 
-  public void RnEmojiCompatPackage(Application application) {
+  public void init(Application application) {
         EmojiCompat.Config config = new BundledEmojiCompatConfig(application);
         EmojiCompat.init(config);
   }
-
 
   @Override
   public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
