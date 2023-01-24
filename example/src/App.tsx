@@ -1,18 +1,14 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-emoji-compat';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text style={styles.text}>Result 14.0: 🫠</Text>
+      <Text style={styles.text}>Result 14.0: 🫱🏼‍🫲🏿</Text>
+      <Text style={styles.text}>Result 13.1: 😶‍🌫️</Text>
+      <Text style={styles.text}>Result 13.1: 🧔🏻‍♀️</Text>
     </View>
   );
 }
@@ -27,5 +23,10 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginVertical: 20,
+  },
+  text: {
+    textAlign: 'center',
+    margin: 16,
+    fontSize: 18,
   },
 });

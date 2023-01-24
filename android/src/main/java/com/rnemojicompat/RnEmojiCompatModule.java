@@ -8,6 +8,9 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 
+import com.facebook.react.bridge.Callback;
+import androidx.emoji2.text.EmojiCompat;
+
 @ReactModule(name = RnEmojiCompatModule.NAME)
 public class RnEmojiCompatModule extends ReactContextBaseJavaModule {
   public static final String NAME = "RnEmojiCompat";
@@ -26,7 +29,12 @@ public class RnEmojiCompatModule extends ReactContextBaseJavaModule {
   // Example method
   // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
-  public void multiply(double a, double b, Promise promise) {
-    promise.resolve(a * b);
-  }
+  public void getCompatibleEmojiString(String input, Callback onSuccess, Callback onError) {
+        try {
+            CharSequence compatible = EmojiCompat.get().process(input);
+            onSuccess.invoke(compatible);
+        } catch(Error error) {
+            onError.invoke("EmojiCompat: Processing emoji failed");
+        }
+    }
 }

@@ -11,7 +11,20 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import android.app.Application;
+
+import androidx.emoji2.text.EmojiCompat;
+import androidx.emoji2.bundled.BundledEmojiCompatConfig;
+
+
 public class RnEmojiCompatPackage implements ReactPackage {
+
+    public void RNEmojiCompatPackage(Application application) {
+        EmojiCompat.Config config = new BundledEmojiCompatConfig(application);
+        EmojiCompat.init(config);
+    }
+
+
   @NonNull
   @Override
   public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactContext) {
