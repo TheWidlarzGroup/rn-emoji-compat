@@ -27,14 +27,4 @@ public class RnEmojiCompatModule extends ReactContextBaseJavaModule {
   public String getName() {
     return NAME;
   }
-
-  @ReactMethod
-  public void getCompatibleEmojiString(String input, Callback onSuccess, Callback onError) {
-        try {
-            CharSequence compatible = EmojiCompat.get().process(input);
-            onSuccess.invoke(compatible);
-        } catch(Error error) {
-            onError.invoke("EmojiCompat: Processing emoji failed");
-        }
-    }
 }
