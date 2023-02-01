@@ -1,22 +1,48 @@
 # rn-emoji-compat
 
-Support new Emojis on older Android versions
+Support new Emojis on older Android versions.
 
-## Installation
+## 🪄 Installation
 
 ```sh
-npm install rn-emoji-compat
+yarn add rn-emoji-compat
+```
+
+The library needs and initialization, to do that you only have to modify the MainApplication.java file.
+
+```
+rootDir/android/app/src/main/java/com/your-project-name/app*/MainApplication.java
+* The app folder name may vary depends on your project setup.
+...
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    SoLoader.init(this, /* native exopackage */ false);
+    initializeEmojiCompat(this); ---> this is NEW
+  }
+
+  private static void initializeEmojiCompat(Context context) {
+      try{
+        Class<?> compatPackageClass = Class.forName("com.rnemojicompat.RnEmojiCompatPackage");
+        compatPackageClass.getMethod("initializeEmojiCompat", Context.class).invoke(null, context);
+      } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+      } catch (NoSuchMethodException e) {
+        e.printStackTrace();
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      } catch (InvocationTargetException e) {
+        e.printStackTrace();
+      }
+  }
+
+  rest...
 ```
 
 ## Usage
 
-```js
-import { multiply } from 'rn-emoji-compat';
-
-// ...
-
-const result = await multiply(3, 7);
-```
+After initilization, all uncompatible emojis should be rendered correctly, there's nothing more to do.
 
 ## Contributing
 
@@ -24,8 +50,15 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## License
 
-MIT
+**[MIT](/LICENSE)**
 
----
+## 📝 Contribute
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+If you want to contribute read the [CONTRIBUTING.md](/CONTRIBUTING.md) guide.
+
+## 🏢 Built with ♥️ and ⌨️ at TheWidlarzGroup
+
+Built at TheWidlarzGroup - the group of React Native Developers and Designers who has built this project for you.
+If you like it -> give it a star!
+
+E-mail if you have any questions or just want to talk <hello@thewidlarzgroup.com>
