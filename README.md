@@ -2,6 +2,10 @@
 
 Support new Emojis on older Android versions.
 
+## Supported Unicode Versions
+
+Currently (02.01.2023) it supports emojis up to Unicode 14.
+
 ## 🪄 Installation
 
 ```sh
