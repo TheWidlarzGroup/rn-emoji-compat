@@ -62,11 +62,12 @@ dependencies {
   // For < 0.71, this will be from the local maven repo
   // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
+  implementation "com.facebook.react:react-native"
+  
   implementation "androidx.appcompat:appcompat:1.5.0"
   implementation "androidx.emoji2:emoji2:1.2.0"
   implementation "androidx.emoji2:emoji2-bundled:1.2.0"
 
-  implementation "com.facebook.react:react-native"
 }
 
 if (isNewArchitectureEnabled()) {
