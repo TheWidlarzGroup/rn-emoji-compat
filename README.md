@@ -12,9 +12,9 @@ Currently (02.01.2023) it supports emojis up to Unicode 14.
 yarn add rn-emoji-compat
 ```
 
-The library needs and initialization, to do that you only have to modify the MainApplication.java file.
+The library needs an initialization, to do that you only have to modify the MainApplication.java file.
 
-```
+```java
 rootDir/android/app/src/main/java/com/your-project-name/app*/MainApplication.java
 * The app folder name may vary depends on your project setup.
 ...
