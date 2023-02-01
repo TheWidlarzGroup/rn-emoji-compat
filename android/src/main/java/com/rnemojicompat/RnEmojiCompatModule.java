@@ -8,7 +8,6 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.module.annotations.ReactModule;
 
-import com.facebook.react.bridge.Callback;
 import androidx.emoji2.text.EmojiCompat;
 
 @ReactModule(name = RnEmojiCompatModule.NAME)
