@@ -48,6 +48,23 @@ rootDir/android/app/src/main/java/com/your-project-name/app*/MainApplication.jav
 
 After initilization, all uncompatible emojis should be rendered correctly, there's nothing more to do.
 
+## Worth to know
+
+The bundled font config will add 10mb to your Android bundle size. However this shouldn't affect your application performance. If you care about bundle size and still need emoji compatibility you should consider enabling proguard and separate build per cpu architecture if you haven't done it yet.
+
+```
+android/app/build.gradle
+
+- def enableSeparateBuildPerCPUArchitecture = false
++ def enableSeparateBuildPerCPUArchitecture = true
+
+- def enableProguardInReleaseBuilds = false
++ def enableProguardInReleaseBuilds = true
+
+```
+
+Depending on the current bundle size it can save you even more than those 10mb
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
