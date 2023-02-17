@@ -1,6 +1,6 @@
 {
   "name": "rn-emoji-compat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Support new Emojis on older Android versions",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
