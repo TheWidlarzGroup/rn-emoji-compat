@@ -50,6 +50,8 @@ After initilization, all uncompatible emojis should be rendered correctly, there
 
 ## Worth to know
 
+Due to problems with using native FontRequest method which should allow to download fonts when they are needed, I had to use bundled config.
+
 The bundled font config will add 10mb to your Android bundle size. However this shouldn't affect your application performance. If you care about bundle size and still need emoji compatibility you should consider enabling proguard and separate build per cpu architecture if you haven't done it yet.
 
 ```
