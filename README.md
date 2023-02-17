@@ -2,6 +2,8 @@
 
 Support new Emojis on older Android versions.
 
+If you are interested in emoji world checkout also our [RN-Emoji-Keyboard](https://github.com/TheWidlarzGroup/rn-emoji-keyboard) library.
+
 ## Supported Unicode Versions
 
 Currently (02.01.2023) it supports emojis up to Unicode 14.
