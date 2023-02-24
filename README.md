@@ -29,7 +29,7 @@ rootDir/android/app/src/main/java/com/your-project-name/app*/MainApplication.jav
   }
 
   private static void initializeEmojiCompat(Context context) {
-      try{
+      try {
         Class<?> compatPackageClass = Class.forName("com.rnemojicompat.RnEmojiCompatPackage");
         compatPackageClass.getMethod("initializeEmojiCompat", Context.class).invoke(null, context);
       } catch (ClassNotFoundException e) {
@@ -45,6 +45,10 @@ rootDir/android/app/src/main/java/com/your-project-name/app*/MainApplication.jav
 
   rest...
 ```
+
+## Expo
+
+To make it work on with Expo you have to use [Development Build](https://docs.expo.dev/development/introduction/)
 
 ## Usage
 
